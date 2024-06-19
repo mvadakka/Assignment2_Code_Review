@@ -11,7 +11,7 @@ UserNumber <- readline(prompt = "Input a three digit number: ")
 #'       else
 #'          Write an error message
 
-if ((as.numeric(UserNumber))>0 & (nchar(UserNumber))==3){
+if ((as.numeric(UserNumber))>0 & (nchar(UserNumber))==3){ 
   # determine if the User Input is a positive number of 3 digits
   print(paste("You entered", UserNumber)) # determine if the input value is a 3 digit positive number
 } else if (is.na(as.numeric(UserNumber))){
@@ -19,13 +19,13 @@ if ((as.numeric(UserNumber))>0 & (nchar(UserNumber))==3){
   print("Please enter a number instead of letters") # determine if the input is an NA
 } else {
   print("You did not input a three digit positive number") # if it is a non-three digit number, tell them to reinput the number
-} # 
+} #MV COMMENT: You could probably combine lines 17 and 20 as both the else conditions aim to trigger an error message, followed by the retry print message  
 
 #' 3. Check if the number is narcissistic. A narcissistic number, or an Armstrong
 #'    number, is a number that is equal to the sum of the cubes of its own digits. 
 #'    153, 370, 371, 407 are three digit Armstrong numbers.
 #' plan: 
-#'      Break up the number, which must originally be left as a string
+#'      Break up the number, which must originally be left as a string #MV COMMENT: explain why must it be originally left as a string, so when you look back at the code you can easily remember why
 #'      Check if the number is an Armstrong number
 
 #' 4. Display the result with an appropriate message, e.g. 
@@ -36,8 +36,12 @@ if ((as.numeric(UserNumber))>0 & (nchar(UserNumber))==3){
 #'      Include a function to restart the program or press a key to escape
 
 #' The following code checks if the number is narcissistic (#3) and then displays the result
-Fragment <- as.numeric(strsplit(UserNumber,"")[[1]])
+Fragment <- as.numeric(strsplit(UserNumber,"")[[1]]) #MV COMMENT: What does the "[[1]]" refer to? perhaps explain so its more clear!
 if (UserNumber == sum(Fragment^3)){
   print(paste(UserNumber,"is an Armstrong Number"))
 }else{
   print(paste(UserNumber,"is not an Armstrong Number"))}
+
+#MV COMMENT: Overall, great job - efficient use of commands and easy to understand :) 
+# A few comments added above on explaining a little bit more of the nitty
+# gritty details so when you look back it's easy to understand
